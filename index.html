@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>4. 롤러레이스</title>
+
+<style type="text/css">
+	 /* Pretendard 폰트 정의 */
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+ @font-face {
+        font-family: 'Pretendard';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+        font-weight: 300; 
+        font-style: normal;
+    }
+body, h1, h2, h3, p, ul, li, div {margin: 0; padding: 0; word-break: break-all;}
+ body {background-color: black; }
+
+ .wrap{display: flex;
+	margin: 0 auto;
+	justify-content: center;
+align-items: center;
+height: 92px}
+
+.menu{display: flex;
+	justify-content: center;
+		height: 92px;
+		margin:auto;
+		align-items: center;
+		gap: 100px;
+		flex-shrink: 0;
+		position: fixed;
+		z-index: 100}
+
+.menu li {list-style-type: none;}
+
+.menu li a {color: #727274;
+		font-family: Pretendard;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	text-decoration: none;}
+
+.menu li a:hover{color: white;}
+
+.thumbnail{width: 1846px;
+		height: 1026px;
+		top: 90px;
+		margin: 0 auto;}
+
+.thumbT{color: white;
+font-family: Pretendard;
+font-size: 64px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 96px */
+top: 735px;
+left: 100px;
+position: absolute;}
+
+.thumbT3{color: white;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 30px */
+width: 718px;
+top: 951px;
+left: 100px;
+position: absolute;
+animation: slide 1.5s ease-in;}
+
+@keyframes slide{
+	from{
+		left: 300px;
+		opacity: 0;
+	}
+	to{
+		left: 100px;
+		opacity: 1;
+	}
+}
+
+
+.Physical1{top: 1230px;
+	position: absolute;
+	left: 0px}
+
+.introTitle{color: #171718;
+font-family: Pretendard;
+font-size: 54px;
+font-style: normal;
+font-weight: 800;
+line-height: normal;
+position: absolute;
+top: 1406px;
+left: 428px}
+
+
+.introText1{
+color: #E00501;
+text-align: center;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: absolute;
+top: 1579px;
+left: 385px;
+display: flex;
+}
+.introText1-2{color: #171718;
+	font-family: Pretendard;
+font-size: 32px;
+font-weight: 700;
+line-height: 38.19px;
+text-align: center;}
+
+.introText2{
+color: #E00501;
+text-align: center;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: absolute;
+top: 1579px;
+left: 1156px;
+display: flex;
+}
+.introText2-2{color: #171718;
+	font-family: Pretendard;
+font-size: 32px;
+font-weight: 700;
+line-height: 38.19px;
+text-align: center;}
+
+        .card {
+            border-radius: 20px;
+            background: #171718;
+            width: 350px;
+            height: 473px;
+            position: absolute;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+        }
+        #card1 {
+            top: 1662px;
+            left: 100px;
+        }
+        #card2 {
+            top: 1662px;
+            left: 466px;
+        }
+.cardT{color: white;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+bottom: -130px;
+position: relative;}
+.cardpic{width: 175.84px;
+height: 203px;
+flex-shrink: 0;
+top: 78px;
+left: 87px;
+position: relative;}
+
+.cardt{color: #A2A2A2;
+text-align: center;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+bottom: -142px;
+position: relative;}
+
+.cardT2{color: white;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-align: center;
+bottom: -130px;
+position: relative;}
+.cardpic2{width: 175.84px;
+height: 203px;
+flex-shrink: 0;
+top: 100px;
+left: 102px;
+position: relative;}
+
+.rank1{color: #171718;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+top: 1679px;
+left: 973px;
+position: absolute;}
+.rank2{color: #171718;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+top: 1772px;
+left: 973px;
+position: absolute;}
+.rank3{color: #49494C;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+top: 1864px;
+left: 973px;
+position: absolute;}
+.rank4{color: #727274;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+top: 1956px;
+left: 973px;
+position: absolute;}
+.rank5{color: #A2A2A2;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+top: 2048px;
+left: 973px;
+position: absolute;}
+
+.rank1-2{width: 516px;
+height: 71px;
+flex-shrink: 0;
+position: absolute;
+top: 1662px;
+left: 1120px}
+.rank2-2{width: 483px;
+height: 71px;
+flex-shrink: 0;
+position: absolute;
+top: 1755px;
+left: 1120px}
+.rank3-2{width: 303px;
+height: 71px;
+flex-shrink: 0;
+position: absolute;
+top: 1847px;
+left: 1120px;
+opacity: 50%}
+.rank4-2{width: 142px;
+height: 71px;
+flex-shrink: 0;
+position: absolute;
+top: 1939px;
+left: 1120px;
+opacity: 25%}
+.rank5-2{width: 90px;
+height: 71px;
+flex-shrink: 0;
+position: absolute;
+top: 2031px;
+left: 1120px;
+opacity: 15%}
+
+
+.explainBG{top: 2655px;
+			left: 0px;
+			position: absolute;}
+.explainTitle{color: white;
+font-family: Pretendard;
+font-size: 54px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 81px */
+position: absolute;
+top: 2655px;
+left: 100px}
+
+.explain1{color: #FFF;
+font-family: Pretendard;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+top: 3088px;
+left: 100px;
+position: absolute;}
+.explain1-2{color: #FFF;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 30px */
+position: absolute;
+top: 3178px;
+left: 100px;
+width: 596px}
+
+.explain1i{position: absolute;
+top: 3349px;
+left: -500px; /* 초기 위치를 화면 밖으로 설정 */
+transition: left 1s ease-out, opacity 1s ease-out;}
+
+.explain1kt{color: #FFF;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+top: 3664px;
+left: 908px;
+position: absolute;}
+.explain1k{color: #FFF;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 30px */
+position: absolute;
+top: 3718px;
+left: 908px;
+width: 704px;}
+
+.explain1p{color: #A2A2A2;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 3088px;
+left: 908px}
+.explain1p-1{color: #FFF;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 3340px;
+left:908px}
+.explain1pi{
+position: absolute;
+top: 3145px;
+     left: 917px; /* 초기 위치를 오른쪽 밖으로 설정 (917px + 200px) */
+            opacity: 0; /* 초기 불투명도 설정 */
+            transition: left 1s ease-out, opacity 1s ease-out; /* 이동 및 불투명도 애니메이션 */
+        }
+
+.explain1a{color: #A2A2A2;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 3088px;
+left:1322px}
+.explain1a-1{color: #FFF;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+top: 3340px;
+left: 1322px;
+position: absolute;}
+.explain1ai{position: absolute;
+top: 3175px;
+ left: 1326px; /* 초기 위치를 오른쪽 밖으로 설정 (1326px + 200px) */
+            opacity: 0; /* 초기 불투명도 설정 */
+            transition: left 1s ease-out 0.2s, opacity 1s ease-out 0.2s; /* 이동 및 불투명도 애니메이션, 0.2초 지연 */
+        }
+
+
+
+.explain2{color: #FFF;
+font-family: Pretendard;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+top: 4481px;
+left: 100px;
+position: absolute;}
+.explain2-2{color: #FFF;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 30px */
+position: absolute;
+top: 4571px;
+left: 100px;
+width: 647px}
+
+.explain2i{position: absolute;
+top: 4733px;
+left: -500px; /* 초기 위치를 화면 밖으로 설정 */
+transition: left 1s ease-out, opacity 1s ease-out;}
+
+.explain2kt{color: #FFF;
+font-family: Pretendard;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+top: 5101px;
+left: 908px;
+position: absolute;}
+.explain2k{color: #FFF;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 30px */
+position: absolute;
+top: 5155px;
+left: 908px;
+width: 720px;}
+
+.explain2p{color: #A2A2A2;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 4481px;
+left: 908px}
+.explain2p-1{color: #FFF;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 4733px;
+left:908px}
+.explain2pi{
+position: absolute;
+top: 4538px;
+left: 917px; /* 초기 위치를 오른쪽 밖으로 설정 (917px + 200px) */
+            opacity: 0; /* 초기 불투명도 설정 */
+            transition: left 1s ease-out 0.4s, opacity 1s ease-out 0.4s; /* 이동 및 불투명도 애니메이션, 0.4초 지연 */
+        }
+
+.explain2a{color: #A2A2A2;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%; /* 36px */
+position: absolute;
+top: 4481px;
+left:1322px}
+.explain2a-1{color: #FFF;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 36px */
+top: 4733px;
+left: 1322px;
+position: absolute;}
+.explain2ai{position: absolute;
+top: 4538px;
+left: 1345px; /* 초기 위치를 오른쪽 밖으로 설정 (1345px + 200px) */
+            opacity: 0; /* 초기 불투명도 설정 */
+            transition: left 1s ease-out 0.6s, opacity 1s ease-out 0.6s; /* 이동 및 불투명도 애니메이션, 0.6초 지연 */
+        }
+
+.routainBG{width: 1728px;
+height: 1382px;
+flex-shrink: 0;
+top: 5790px;
+left: 0px;
+position: absolute;}
+.routainT{color: #171718;
+font-family: Pretendard;
+font-size: 54px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 81px */
+position: absolute;
+top: 5972px;
+left: 100px}
+
+.routainC1{width: 754px;
+height: 309px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #F3F3F3;
+position: absolute;
+top: 6236px;
+left: 100px;}
+.routainC1i{top: 40px;
+left: 562px;
+position: relative;}
+.routainC1T{color: #171718;
+font-family: Pretendard;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+position: relative;
+top: -107px;
+left: 56px}
+.routainC1T2{color: #171718;
+font-family: Pretendard;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
+position: relative;
+top: -87px;
+left: 56px}
+
+.routainC2{width: 754px;
+height: 309px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #F3F3F3;
+position: absolute;
+top: 6563px;
+left: 100px;}
+
+.routainC3{width: 754px;
+height: 309px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #F3F3F3;
+position: absolute;
+top: 6237px;
+left: 872px;}
+
+.routainC4{width: 754px;
+height: 309px;
+flex-shrink: 0;
+border-radius: 30px;
+background: #F3F3F3;
+position: absolute;
+top: 6563px;
+left: 872px;}
+
+.routainC1, .routainC2, .routainC3, .routainC4 {
+            width: 754px;
+            height: 309px;
+            flex-shrink: 0;
+            border-radius: 30px;
+            background: #F3F3F3;
+            position: absolute;
+            transition: transform 0.1s ease; /* 부드러운 움직임을 위한 트랜지션 */
+        }
+
+.routainL{color: #727274;
+text-align: right;
+font-family: Pretendard;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 30px */
+position: absolute;
+top: 6907px;
+right: 100px;}
+
+.next{width: 152px;
+height: 152px;
+position: fixed;
+bottom: 51px;
+left: 1504px;
+z-index: 100;
+
+}
+
+</style>
+
+
+<nav class="wrap">
+
+<ul class="menu">
+	<li><a href= "#aaa">About</a></li>
+	<li><a href= "#bbb">Ch.0</a></li>
+	<li><a href= "#ccc">Ch.1</a></li>
+	<li><a href= "#ddd">Ch.2</a></li>
+	<li><a href= "#ddd">Ch.3</a></li>
+	<li><a href= "#ddd">Ch.4</a></li>
+</ul>
+
+</nav>
+
+<a href="https://www.example.com" class="next">
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
+  <circle cx="48" cy="48" r="46.5" fill="#171718" stroke="#727274" stroke-width="3"/>
+  <path d="M26.5264 45.5C25.1457 45.5 24.0264 46.6193 24.0264 48C24.0264 49.3807 25.1457 50.5 26.5264 50.5L26.5264 45.5ZM71.2415 49.7678C72.2178 48.7915 72.2178 47.2085 71.2415 46.2322L55.3316 30.3223C54.3553 29.346 52.7724 29.346 51.7961 30.3223C50.8198 31.2986 50.8198 32.8816 51.7961 33.8579L65.9382 48L51.7961 62.1421C50.8198 63.1184 50.8198 64.7014 51.7961 65.6777C52.7724 66.654 54.3553 66.654 55.3316 65.6777L71.2415 49.7678ZM26.5264 50.5L69.4737 50.5L69.4737 45.5L26.5264 45.5L26.5264 50.5Z" fill="white"/>
+</svg>
+</a>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<img class="thumbnail" src="./2024040419450896038_1712227508_1712218994 1.png">
+<h1 class="thumbT">Quest : 4<br>
+[롤러 레이스]</h1>
+<h2 class="thumbT3">출발선 반대편에 있는 두 개의 150Kg 롤러를 한 개씩 모두 이동시킨 후, 처음 롤러가 있던 자리로 돌아가야 한다. 선착순으로 매 라운드 최하위 참가자는 종료 즉시 탈락하고 팀원 중 최후의 생존자 1인이 결정될 때까지 중단 없이 진행된다.</h2>
+
+<svg class="Physical1" xmlns="http://www.w3.org/2000/svg" width="1728" height="1086" viewBox="0 0 1728 1086" fill="none">
+ <path d="M91.9684 98.0732C119.908 38.2403 179.968 0 246.003 0L1728 0V1086H0V295.027L91.9684 98.0732Z" fill="white"/>
+<h1 class="introTitle">우승자들은 어떤 피지컬을 가지고 있을까?</h1>
+<span class="introText1">육체 <h2 class="introText1-2">의 조건</h2></span>
+
+<span class="introText2">운동능력 <h2 class="introText2-2">의 조건</h2></span>
+
+<div class="card" id="card1"> 
+<img class="cardpic" src="./Group 38.svg">
+<h2 class="cardT">낮은 체중</h2>
+</div>
+
+<div class="card" id="card2"> 
+<img class="cardpic2" src="./Union.svg">
+<h2 class="cardT2">높은 코어 근육량</h2>
+</div>
+
+
+<div class="rank1">근력</div>
+<div class="rank2">근지구력</div>
+<div class="rank3">속력</div>
+<div class="rank4">심폐지구력</div>
+<div class="rank5">순발력</div>
+<img class="rank1-2" src="b6f8a061-a959-4bbc-a9e7-ade642e13b66.gif">
+<img class="rank2-2" src="b6f8a061-a959-4bbc-a9e7-ade642e13b66.gif">
+<img class="rank3-2" src="b6f8a061-a959-4bbc-a9e7-ade642e13b66.gif">
+<img class="rank4-2" src="b6f8a061-a959-4bbc-a9e7-ade642e13b66.gif">
+<img class="rank5-2" src="b6f8a061-a959-4bbc-a9e7-ade642e13b66.gif">
+
+</svg>
+
+
+<svg class="explainBG" xmlns="http://www.w3.org/2000/svg" width="1728" height="4936" viewBox="0 0 1728 4936" fill="none">
+  <path d="M0 596.558L1728 0V4935.5H0V596.558Z" fill="#171718"/>
+</svg>
+<h1 class="explainTitle">능력 함양을 위한<br>
+근력운동 실전대비 Tip도 얻어가요!</h1>
+
+<div class="explain1">01. 스쿼트</div>
+<div class="explain1-2">스미스 머신 또는 스쿼트 랙에 바벨을 놓고 어깨에 바벨을 얹습니다. 다리를 어깨 너비로 벌리고 서서, 천천히 무릎을 굽히며 앉습니다. 허리를 곧게 펴고, 엉덩이를 뒤로 빼며 앉았다가 일어섭니다.</div>
+<div class="explain1p">육체효과</div>
+<div class="explain1p-1">기능적 움직임 개선<br>
+하체 근력 증대</div>
+<img src="./Group 57.svg" class="explain1pi" id="explain1pi">
+
+<div class="explain1a">향상될 운동 능력</div>
+<div class="explain1a-1">균형 및 안정성 증가<br>
+근지구력 강화<br>
+근력 강화</div>
+<img src="./Group 54.svg" class="explain1ai" id="explain1ai">
+
+<img src="./1025869773_s8P93ovU_bfc536c5bc018a88ae56a1b0895bb97ca03b3e6b 1.png" class="explain1i" id="explain1i">
+<div class="explain1kt">아 진짜?</div>
+<div class="explain1k">풀스쿼트 머신은 자유 중량 스쿼트와 비교하여 균형을 잡기 쉽고 안정성이 높아 초보자들이 안전하게 스쿼트를 수행할 수 있도록 도와줘요. 스쿼트와 찰떡인 아이템이 있는데요, 전용 리프팅 슈즈는 평평한 바닥과 견고한 힐을 가지고 있어 발의 안정성을 높이고, 무게 중심을 잘 잡을 수 있도록 도와주기도 해요!</div>
+
+
+<div class="explain2">02. 케틀벨 스윙</div>
+<div class="explain2-2">다리를 어깨 너비로 벌리고 케틀벨을 두 손으로 잡습니다. 무릎을 약간 굽히고 엉덩이를 뒤로 빼며 케틀벨을 다리 사이로 보냅니다. 엉덩이와 허리의 힘으로 케틀벨을 어깨 높이까지 스윙합니다.
+</div>
+
+<div class="explain2p">육체효과</div>
+<div class="explain2p-1">심폐기능 향상<br>
+체지방 감소<br>
+근육 톤 개선</div>
+<img src="./Group 20.svg" class="explain2pi" id="explain2pi">
+
+<div class="explain2a">향상될 운동 능력</div>
+<div class="explain2a-1">폭발력 및 순발력 향상<br>
+심폐지구력 증가</div>
+<img src="./Group 53.svg" class="explain2ai" id="explain2ai">
+
+<img src="./fLyy4SkEiyzxuNDUOQJMTr0phLV3ev0n8sg3LghxZle3REYm-lR0aSm-29hf1ocnbv6vdFJRu1wFogUPCH4j3g-removebg-preview 1.png" class="explain2i" id="explain2i">
+<div class="explain2kt">주의!</div>
+<div class="explain2k">작고 귀엽게 생겼다고 무시하면 안돼요! 폭발적인 힘이 요구되는 만만치 않은 운동이에요. 커틀벨 스윙은 별다른 머신 없이 사용자가 잡고 자세를 취해야 하기 때문에 자세교정이 매우매우 중요하죠. 무릎을 과도하게 굽히지 않도록 하고, 엉덩이를 뒤로 빼는 힙 힌지 동작에 집중해야 해요. 무게를 등이나 팔로 들어 올리려 하지 말고, 엉덩이와 하체의 힘을 사용해야 해요!</div>
+
+<img class="routainBG" src="Rectangle 13.png">
+<div class="routainT">아직 감이 안잡히나요?<br>
+그렇다면 데일리 트레이닝 플랜도 짜드릴게요.</div>
+
+<div class="routainC1">
+	<img class="routainC1i" src="./Group 43.svg">
+	<h1 class="routainC1T">월요일</h1>
+	<h2 class="routainC1T2">아침: 풀업 4세트 x 8-10회 <br>
+(등 및 팔 근력 강화)<br>
+저녁: 트라이셉스 딥: 3세트 x 12회 <br>
+(삼두근 강화)</h2>
+</div>
+
+<div class="routainC2">
+	<img class="routainC1i" src="./Group 42.svg">
+	<h1 class="routainC1T">금요일</h1>
+	<h2 class="routainC1T2">아침: 팀 스포츠 참여 60분<br>
+(협동심 및 전략적 사고 강화, 예: 축구, 농구)<br>
+저녁: 고정식 자전거 45분<br>
+(심폐지구력 강화)</h2>
+</div>
+
+<div class="routainC3">
+	<img class="routainC1i" src="./Group 52.svg">
+	<h1 class="routainC1T">수요일</h1>
+	<h2 class="routainC1T2">아침: 복근 강화 <br>
+(플랭크 3세트 x 1분, 레그 레이즈 3세트 x 15회)<br>
+저녁: 스프린트 트레이닝 30분 <br>
+(100m 전력 질주 x 8세트, 세트 사이 2분 휴식)</h2>
+</div>
+
+<div class="routainC4">
+	<img class="routainC1i" src="./Group 41.svg">
+	<h1 class="routainC1T">주말</h1>
+	<h2 class="routainC1T2">전일: 가벼운 산책 또는 스트레칭<br>
+마사지 또는 폼롤러 사용 20분</h2>
+</div>
+
+<div class="routainL">이와 같은 프로그램을 통해 공중 짐나르기에 필요한 다양한 능력을 균형 있게 발전시킬 수 있습니다.<br>
+각 훈련의 강도는 개인의 현재 피지컬 상태와 목표에 맞추어 조절합니다.</div>
+
+
+
+
+<script>
+    // Function to add mouse event listeners to a card
+    function add3DEffect(cardId) {
+        const card = document.getElementById(cardId);
+
+        card.addEventListener('mousemove', (e) => {
+            // 오른쪽으로 움직이도록 회전 각도 계산을 반대로 변경합니다.
+            const xAxis = (e.pageX - window.innerWidth / 2) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+
+            card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        card.addEventListener('mouseenter', (e) => {
+            card.style.transition = 'none';
+        });
+
+        card.addEventListener('mouseleave', (e) => {
+            card.style.transition = 'transform 0.5s ease';
+            card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    }
+
+    // Apply the 3D effect to both cards
+    add3DEffect('card1');
+    add3DEffect('card2');
+</script>
+
+ <script>
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', () => {
+            const image = document.getElementById('explain1i');
+            const scrollPosition = window.scrollY + window.innerHeight; // 현재 스크롤 위치 + 창 높이
+            const imagePosition = image.offsetTop + image.clientHeight / 2; // 이미지 중앙 위치
+
+            // 스크롤 위치가 이미지 위치에 도달하면
+            if (scrollPosition > imagePosition) {
+                image.style.left = '72px'; // 이미지가 왼쪽에서 들어옴
+            }
+        });
+    </script>
+ <script>
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', () => {
+            const image = document.getElementById('explain2i');
+            const scrollPosition = window.scrollY + window.innerHeight; // 현재 스크롤 위치 + 창 높이
+            const imagePosition = image.offsetTop + image.clientHeight / 2; // 이미지 중앙 위치
+
+            // 스크롤 위치가 이미지 위치에 도달하면
+            if (scrollPosition > imagePosition) {
+                image.style.left = '196px'; // 이미지가 왼쪽에서 들어옴
+            }
+        });
+    </script>
+
+   <script>
+        const initialPositions = {
+            explain1pi: 1117,
+            explain1ai: 1526,
+            explain2pi: 1117,
+            explain2ai: 1545
+        };
+
+        // 스크롤 이벤트 리스너 추가
+        window.addEventListener('scroll', () => {
+            const images = [
+                document.getElementById('explain1pi'),
+                document.getElementById('explain1ai'),
+                document.getElementById('explain2pi'),
+                document.getElementById('explain2ai')
+            ];
+
+            const scrollPosition = window.scrollY + window.innerHeight; // 현재 스크롤 위치 + 창 높이
+
+            images.forEach(image => {
+                const imagePosition = image.offsetTop + image.clientHeight / 2; // 각 이미지 중앙 위치
+
+                // 스크롤 위치가 이미지 위치에 도달하면
+                if (scrollPosition > imagePosition) {
+                    image.style.left = `${initialPositions[image.id] - 200}px`; // 이미지가 왼쪽으로 이동
+                    image.style.opacity = '1'; // 불투명도를 1로 변경
+                } else {
+                    image.style.left = `${initialPositions[image.id]}px`; // 이미지가 다시 숨겨짐
+                    image.style.opacity = '0'; // 불투명도를 0으로 변경
+                }
+            });
+        });
+
+        // 페이지 로드 시 초기 위치 설정
+        window.addEventListener('load', () => {
+            document.getElementById('explain1pi').style.left = `${initialPositions['explain1pi']}px`;
+            document.getElementById('explain1ai').style.left = `${initialPositions['explain1ai']}px`;
+            document.getElementById('explain2pi').style.left = `${initialPositions['explain2pi']}px`;
+            document.getElementById('explain2ai').style.left = `${initialPositions['explain2ai']}px`;
+        });
+    </script>
+
+     <script>
+        // 모든 카드 요소 선택
+        const cards = document.querySelectorAll('.routainC1, .routainC2, .routainC3, .routainC4');
+
+        // 마우스 움직임 이벤트 리스너 추가
+        document.addEventListener('mousemove', (e) => {
+            // 화면 중앙에서 마우스 위치를 기준으로 이동 범위를 계산 (10px 이내)
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 100;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 100;
+
+            // 각 카드에 대해 변환 적용 (회전은 5도 이내로 제한)
+            cards.forEach(card => {
+                card.style.transform = `translate(${xAxis}px, ${yAxis}px) rotate(${xAxis / 2}deg)`;
+            });
+        });
+    </script>
+
+</body>
+</html>
